@@ -14,6 +14,7 @@ public class TambahDuaAngka extends javax.swing.JFrame {
      * Creates new form TambahDuaAngka
      */
     public TambahDuaAngka() {
+        setTitle("APLIKASI PENJUMLAHAN DUA ANGKA")
         initComponents();
     }
 
@@ -33,13 +34,16 @@ public class TambahDuaAngka extends javax.swing.JFrame {
         hasil = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         BtnHitung = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        BtnHapus = new javax.swing.JButton();
+        BtnKeluar = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel1.setText("Angka Pertama");
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel2.setText("Angka Kedua");
 
         bil1.addActionListener(new java.awt.event.ActionListener() {
@@ -59,8 +63,10 @@ public class TambahDuaAngka extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel3.setText("Hasil");
 
+        BtnHitung.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         BtnHitung.setText("Hitung");
         BtnHitung.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,9 +74,24 @@ public class TambahDuaAngka extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Hapus");
+        BtnHapus.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        BtnHapus.setText("Hapus");
+        BtnHapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnHapusActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Keluar");
+        BtnKeluar.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        BtnKeluar.setText("Keluar");
+        BtnKeluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnKeluarActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
+        jLabel4.setText("APLIKASI PENAMBAHAN DUA ANGKA");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -89,16 +110,22 @@ public class TambahDuaAngka extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(BtnHitung)
                         .addGap(32, 32, 32)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(BtnHapus, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                        .addComponent(BtnKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(bil1))
                 .addGap(216, 216, 216))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addGap(186, 186, 186))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(85, 85, 85)
+                .addGap(30, 30, 30)
+                .addComponent(jLabel4)
+                .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(bil1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -113,9 +140,9 @@ public class TambahDuaAngka extends javax.swing.JFrame {
                 .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnHitung)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
-                .addContainerGap(115, Short.MAX_VALUE))
+                    .addComponent(BtnHapus)
+                    .addComponent(BtnKeluar))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
 
         pack();
@@ -139,6 +166,17 @@ public class TambahDuaAngka extends javax.swing.JFrame {
          int hsl = a+b;
            hasil.setText(String.valueOf(hsl));
     }//GEN-LAST:event_BtnHitungActionPerformed
+
+    private void BtnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnHapusActionPerformed
+        if (!(bil1.getText().toString().equals("") || bil1.getText().toString().equals("") || hasil.getText().toString().equals("") ));
+        bil1.setText("");
+        bil2.setText("");
+        hasil.setText("");
+    }//GEN-LAST:event_BtnHapusActionPerformed
+
+    private void BtnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnKeluarActionPerformed
+       this.dispose();
+    }//GEN-LAST:event_BtnKeluarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -176,14 +214,15 @@ public class TambahDuaAngka extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnHapus;
     private javax.swing.JButton BtnHitung;
+    private javax.swing.JButton BtnKeluar;
     private javax.swing.JTextField bil1;
     private javax.swing.JTextField bil2;
     private javax.swing.JTextField hasil;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }
